@@ -1,0 +1,682 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+<head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tea Tree Resort</title>
+        <!--=============== css  ===============-->	
+        <link type="text/css" rel="stylesheet" href="css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <style>
+        @media (max-width: 768px) {
+            .main-footer {
+                height: 150px; /* Adjust the height for smaller screens */
+                padding: 10px; /* Adjust padding for smaller screens */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-footer {
+            
+                height: 1000px; /* Adjust the height for even smaller screens */
+                padding: 0px; /* Adjust padding for smaller screens */
+            }
+        }
+
+
+        .call-button {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: rgb(92, 92, 255);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .call-button img {
+            width: 30px;
+            height: 40px;
+            padding-top:10px;
+        }
+
+        .call-button a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #25d366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+        }
+
+        .whatsapp-button img {
+            width: 40px;
+            height: 40px;
+            padding-top:10px;
+        }
+
+        .whatsapp-button a {
+            display: block;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            color: white;
+            text-decoration: none;
+        }
+
+
+
+        </style>
+    </head>
+
+    <body>
+
+        <div class="whatsapp-button">
+            <a href="https://wa.me/8129033535" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+
+        <div class="call-button">
+            <a href="tel:+918281877917" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call">
+            </a>
+        </div>
+
+
+        <!-- lodaer  -->
+        <div class="loader-wrap">
+            <div class="loader-item">
+                <div class="cd-loader-layer" data-frame="25">
+                    <div class="loader-layer"></div>
+                </div>
+                <span class="loader"><i class="fa-thin fa-gem"></i></span>
+            </div>
+        </div>
+ 
+        <div id="main">
+            <!--  header  -->
+            <header class="main-header">
+                <div class="container">
+                    <!--  header-top -->
+                    <div class="header-top  fl-wrap">
+                        <div class="header-top_contacts"><a href="#"><span>Call:</span> +91 8281877917, +91 8113825917</a><a href="#"><span>Find us:</span> Pappathichola, Suryanelly P.O, Chinnakanal, Munnar</a></div>
+                        <div class="header-social">
+                            <ul>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!--  header-top end  -->
+                    <div class="nav-holder-wrap init-fix-header  fl-wrap">
+                        <a href="index.html" class="logo-holder"><img src="images/logo-org.png" alt=""></a>
+                        <!--  navigation -->
+                        <div class="nav-holder main-menu">
+                            <nav>
+                                <ul>
+                            
+                                    <li><a href="index.html" class="act-link" style="font-size: 12px;">Home</a></li>
+                                    <li><a href="about.html" style="font-size: 12px;">About</a></li>
+                                    <li><a href="rooms.html" style="font-size: 12px;">Accomodation</a></li>
+                                    <li><a href="places_to_visit.html">Places To Visit</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- navigation  end -->  		
+                        <div class="serach-header-btn_wrap">							
+                            <a href="rooms.html" class="serach-header-btn"> <span>Book a Room</span></a>
+                        </div>
+
+                        <!-- nav-button-wrap-->
+                        <div class="nav-button-wrap">
+                            <div class="nav-button">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <!-- nav-button-wrap end-->					
+                        <!-- share-wrapper -->
+                        <div class="share-wrapper isShare">
+                            <div class="share-container fl-wrap"></div>
+                        </div>
+                        <!-- share-wrapper-end -->					
+                        <!--wish-list-wrap-->
+                        <div class="wish-list-wrap novis_cart">
+                            <div class="wish-list-close close_cart-init clwl_btn"><i class="fa-regular fa-xmark"></i></div>
+                            <div class="wish-list-title">Your Wishlist </div>
+                            <div class="wish-list-container">
+                                <!--wish-list-item-->
+                                <div class="wish-list-item fl-wrap">
+                                    <div class="wish-list-img"><a href="room-single.html"><img src="images/room/thumbnail/1.jpg" alt=""></a>  
+                                    </div>
+                                    <div class="wish-list-descr">
+                                        <h4><a href="room-single.html">Garden Family Room</a></h4>
+                                        <div class="wish-list-price">$129/Night</div>
+                                        <a  href="room-single.html" class="wshil_link">Book Now</a>
+                                        <div class="clear-wishlist"><i class="fa-regular fa-trash-can"></i></div>
+                                    </div>
+                                </div>
+                                <!--wish-list-item end-->
+                                <!--wish-list-item-->
+                                <div class="wish-list-item fl-wrap">
+                                    <div class="wish-list-img"><a href="room-single.html"><img src="images/room/thumbnail/2.jpg" alt=""></a>  
+                                    </div>
+                                    <div class="wish-list-descr">
+                                        <h4><a href="room-single.html">Premium Panorama Room</a></h4>
+                                        <div class="wish-list-price"> $230/Night</div>
+                                        <a  href="room-single.html" class="wshil_link">Book Now</a>
+                                        <div class="clear-wishlist"><i class="fa-regular fa-trash-can"></i></div>
+                                    </div>
+                                </div>
+                                <!--wish-list-item end-->
+                            </div>
+                            <div class="wish-list-wrap-btns">
+                                <a href="#" class="wl_btn">Clear wishlist</a>
+                            </div>
+                        </div>
+                        <!--wish-list-wrap-->
+                    </div>
+                </div>
+            </header>
+            <div class="header-overlay close_cart-init"></div>
+            <!--  header end  -->
+            <!--  section  -->
+            <div class="content-section parallax-section hero-section htc_single_item">
+                <div class="fs-wrapper slideshow-container_wrap htc_single_item_dec">
+                    <!--ms-container-->
+                    <div class="video-holder-wrap fs-wrapper">
+                        <div class="video-container">
+                            <video autoplay playsinline loop muted  class="bgvid">
+                                <source src="video/3hd.mp4" type="video/mp4">
+                            </video>
+                        </div>
+                    </div>
+
+                 
+                    <div class="overlay"></div>
+                    <div class="dec-corner dc_lb"></div>
+                    <div class="dec-corner dc_rb"></div>
+                    <div class="dec-corner dc_rt"></div>
+                    <div class="dec-corner dc_lt"></div>
+                </div>
+                <div class="container">
+                    <div class="hero-title-container htc_single">
+                        <div class="section-title">
+                            <h4>Enjoy your time in our resort with pleasure.</h4>
+                            <h2 style="color:rgba(255, 255, 255, 0.42);">Welcome to The Tea <br>Tree Resort</h2>
+                            <div class="section-separator"><span><i class="fa-thin fa-gem"></i></span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container small-container ">
+                  
+                </div>
+
+                <div class="hero-section-scroll">
+                    <!-- <div class="mousey">
+                        <div class="scroller"></div>
+                    </div> -->
+                </div>
+                <div class="tcs-pagination_wrap">
+                    <!-- <div class="svg-corner svg-corner_white"  style="bottom:0;right:-38px; transform: rotate(90deg)"></div>
+                    <div class="svg-corner svg-corner_white"  style="bottom:0;left:-38px; transform: rotate(0deg)"></div>
+                    <div class="tcs-pagination hero-slider-pag"></div> -->
+                </div>
+                <!-- <div class="hero-call-wrap">
+                    <i class="fa-thin fa-phone-rotary"></i>
+                    <a href="#">+91 8281877917</a>
+                </div>
+                <div class="slide-progress_container">
+                    <div class="slide-progress-wrap">
+                        <div class="slide-progress"></div>
+                    </div>
+                </div> -->
+            </div>
+
+
+
+ 
+   
+            <!-- section end  -->
+            <!--content-->
+            <div class="content">
+                <!-- breadcrumbs-wrap  -->
+                <div class="breadcrumbs-wrap" style="margin-top:-80px;">
+                    <!-- <div class="container">
+                    </div> -->
+                </div>
+                <!--breadcrumbs-wrap end  -->
+                <!-- section   -->
+                <div class="content-section" id="sec2" >
+                    <div class="section-dec"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <div class="section-title text-align_left" >
+                                    <h4>Enjoy your time in our resort</h4>
+                                    <h2>About Tea Tree Resort</h2>
+                                </div>
+                                <div class="text-block tb-sin">
+                                    <p class="has-drop-cap">Introducing TeeTree Resort, Munnar! Nestled in the enchanting village of Pappathichola, Surynelly near Chinnakkanal, this newly unveiled sanctuary offers a serene escape into nature's embrace. Cradled in the verdant arms of the majestic Kolukkumalai Mountain, guests are invited to lose themselves in a tapestry of breathtaking views and tranquil landscapes.</p>
+                                    <p>With 12 premium rooms, two sumptuous luxury suites, and 2 deluxe accommodations, TeeTree Resort offers an opulent haven for those seeking a peaceful retreat. Here, you may surrender to the mountain’s gentle caress, where serenity and stillness weave a tranquil spell. Ideal for families, couples, or solitary seekers of solace, this hidden gem promises an enchanting odyssey, where every moment becomes a cherished memory amidst nature's grandeur.</p>
+                                    <a href="about.html" class="btn fl-btn">Read more About Us</a>
+                                    <div class="dc_dec-item_left"><span></span></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="hero-image-collge-wrap">
+                                    <div class="single-dec_img">
+                                        <img src="images/reception/CAL07789.JPG" alt="Reception" class="respimg">
+
+                                    </div>
+                                    <div class="hero_images-collage-item" style="width: 25%; bottom:  25px; z-index: 15; left: -70px;"><img src="images/reception/CAL07785.JPG" class="respimg" alt=""></div>
+                                    <!-- <div class="hero_images-collage-item" style="width: 25%; top: -5%; z-index: 11; right: -120px;"><img src="images/hillview.jpg" class="respimg" alt=""></div> -->
+                                    <div class="dc_dec-item_right"><span></span></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sc-dec" style="left: -220px; bottom: -100px;"></div>
+                    </div>
+                    <!-- <div class="content-dec2 fs-wrapper"></div>
+                    <div class="content-dec"><span></span></div> -->
+                </div>
+                <!-- section end  -->	     
+          
+                <!-- section   -->
+                <div class="content-section dark-bg no-padding hidden-content">
+                    <div class="row">
+       
+                        <div class="col-lg-1">  
+
+                        </div>
+                   
+                        <div class="col-lg-12">
+                            <div class="rooms-carousel-wrap" style="height:500px;">
+                                <div class="rooms-carousel full-height" >
+                                    <div class="swiper-container" >
+                                        <div class="swiper-wrapper">
+                                            <!--rooms-carousel-item-->
+                                            <div class="swiper-slide" >
+                                                <div class="rooms-carousel-item full-height" >
+                                                    <div class="bg-wrap bg-parallax-wrap-gradien fs-wrapper" >
+                                                        <div class="bg" data-bg="images/1/DSC02793.jpg" data-swiper-parallax="10%"></div>
+                                                    </div>
+                                                    <div class="rooms-carousel-item_container">
+                                                        <h3><a href="room-single.html">Luxury Room</a>  </h3>
+                                                        <div class="room-card-details">
+                                                           
+                                                            <div class="grid-item_price">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="like-btn"><i class="fa-light fa-heart"></i> <span>Add to Wislist</span></div> -->
+                                                </div>
+                                            </div>
+                                            <!--rooms-carousel-item end-->
+                                            <!--rooms-carousel-item-->
+                                            <div class="swiper-slide">
+                                                <div class="rooms-carousel-item full-height">
+                                                    <div class="bg-wrap bg-parallax-wrap-gradien fs-wrapper">
+                                                        <div class="bg" data-bg="images/2/2024-07-254.jpg" data-swiper-parallax="10%"></div>
+                                                    </div>
+                                                    <div class="rooms-carousel-item_container">
+                                                        <h3><a href="room-single2.html">Premium Room</a>  </h3>
+                                                        <div class="room-card-details">
+                                                            
+                                                            <div class="grid-item_price">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="like-btn"><i class="fa-light fa-heart"></i> <span>Add to Wislist</span></div> -->
+                                                </div>
+                                            </div>
+                                            <!--rooms-carousel-item end-->										
+                                            <!--rooms-carousel-item-->
+                                            <div class="swiper-slide">
+                                                <div class="rooms-carousel-item full-height" >
+                                                    <div class="bg-wrap bg-parallax-wrap-gradien fs-wrapper">
+                                                        <div class="bg" data-bg="images/3/2024-07-25-a2.jpg" data-swiper-parallax="10%"></div>
+                                                    </div>
+                                                    <div class="rooms-carousel-item_container">
+                                                        <h3><a href="room-single3.html">Deluxe Room</a>  </h3>
+                                                        <div class="room-card-details">
+                                                       
+                                                            <div class="grid-item_price">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <!-- <div class="like-btn"><i class="fa-light fa-heart"></i> <span>Add to Wislist</span></div> -->
+                                                </div>
+                                            </div>
+                                            <!--rooms-carousel-item end-->										
+                                            <!--rooms-carousel-item-->
+                                  
+                                            <!--rooms-carousel-item end-->									
+                                        </div>
+                                    </div>
+                                </div>
+                    
+                                <div class="rc-controls-wrap">
+                                    <div class="rc-button rc-button-prev"><i class="fa-solid fa-caret-left"></i></div>
+                                    <div class="rc-button rc-button-next"><i class="fa-solid fa-caret-right"></i></div>
+                                </div>
+
+                        
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- section   -->	
+                <!-- section   -->
+                <div class="content-section">
+                    <div class="container">
+
+                        <a href="rooms.html"   class="dwonload_btn" style="margin-top:-100px;">View All rooms</a>
+                        <div class="sc-dec" style="left: -220px; bottom: -100px;"></div>
+                        <div class="sc-dec2" style="right: -220px; top: -100px;"></div>
+                    </div>
+                    <!-- <div class="content-dec2 fs-wrapper"></div>
+                    <div class="content-dec"><span></span></div> -->
+                </div>
+                <!-- section end  -->	
+                <!-- section   -->
+                <div class="content-section dark-bg hidden-section  wide-section" data-scrollax-parent="true">
+                    <div class="bg"  data-bg="images/bg/25.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                    <div class="overlay overlay-bold"></div>
+                    <div class="dec-corner dc_rt"></div>
+                    <div class="dec-corner dc_lt"></div>
+                    <div class="container">
+                        <div class="wide_section-title">
+                      
+                        </div>
+                        <div class="boxed-container">
+                            <div class="boxed-container-title">
+                           
+                            </div>
+                    
+                        </div>
+
+
+
+                        <!--boxed-container end-->	
+                        <div class="section-separator" style="margin-top:-200px;"><span><i class="fa-thin fa-gem"></i></span></div>
+                        <!--aminites-cards-wrap-->
+                        <div class="aminites-cards-wrap">
+                            <div class="row">
+                                <!--aminites-card-item-->
+                                <div class="col-lg-3">
+                                    <div class="aminites-card-item">
+                                        <i class="fa-thin fa-hiking"></i>
+                                        <h4>Hiking</h4>
+                                        <p>The resort’s location offers abundant hiking opportunities thanks to its close proximity to the majestic Kolukkumalai Hill in the high range.</p>
+                                        <div class="tbc-separator"></div>
+                                        <span class="aci_num">01.</span>
+                                    </div>
+                                </div>
+                                <!--aminites-card-item end-->
+                                <!--aminites-card-item-->
+                                <div class="col-lg-3">
+                                    <div class="aminites-card-item">
+                                        <i class="fa-thin fa-fire"></i>
+                                        <h4>Campfire</h4>
+                                        <p>The climate is perfect for a campfire, making it an ideal setting for all your gatherings amidst the mist-covered landscape at Tea Tree resort, Munnar</p>
+                                        <div class="tbc-separator"></div>
+                                        <span class="aci_num">02.</span>
+                                    </div>
+                                </div>
+                                <!--aminites-card-item end-->								
+                                <!--aminites-card-item-->
+                                <div class="col-lg-3">
+                                    <div class="aminites-card-item">
+                                        <i class="fa-thin fa-utensils"></i>
+                                        <h4>Restaurant</h4>
+                                        <p>The restaurant can accommodate a large number of guests, allowing everyone to enjoy breathtaking mountain views from its prime vantage point.</p>
+                                        <div class="tbc-separator"></div>
+                                        <span class="aci_num">03.</span>
+                                    </div>
+                                </div>
+                                <!--aminites-card-item end-->								
+                                <!--aminites-card-item-->
+                                <div class="col-lg-3">
+                                    <div class="aminites-card-item">
+                                        <i class="fa-thin fa-wifi"></i>
+                                        <h4>Free WiFi</h4>
+                                        <p>You can enjoy free WiFi throughout the entire resort, allowing you to stay connected no matter where you are on the property.</p>
+                                        <div class="tbc-separator"></div>
+                                        <span class="aci_num">04.</span>
+                                    </div>
+                                </div>
+                        
+                              								
+                            </div>
+                            <div class="dc_dec-item_left"><span></span></div>
+                            <div class="dc_dec-item_right"><span></span></div>
+                        </div>
+                        <!--aminites-cards-wrap end-->
+                        <div class="sc-dec" style="left: -220px; bottom: -100px;"></div>
+                        <div class="sc-dec2" style="right:  220px; top: 50%;"></div>
+                    </div>
+                </div>
+                <!-- section end  -->					
+
+
+
+
+
+
+
+                <div class="content-section parallax-section hero-section htc_single_item" style="margin-top:-80px;">
+                    <div class="fs-wrapper slideshow-container_wrap htc_single_item_dec">
+                        <!--ms-container-->
+                        <div class="multi-slideshow_fs ms-container fl-wrap full-height">
+                            <div class="swiper-container full-height">
+                                <div class="swiper-wrapper">
+                                    <!--ms_item-->
+                                    <div class="swiper-slide">
+                                        <div class="ms-item_fs  full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/Outside/frontview.jpg"></div>
+                                        </div>
+                                    </div>
+                                 
+                                    <!--ms_item end-->
+                                    <!--ms_item-->
+                                    <div class="swiper-slide ">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/Outside/frontview2.jpg"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide ">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/Outside/topview.jpg"></div>
+                                        </div>
+                                    </div>
+                                    <!--ms_item end-->
+                                    <!--ms_item-->
+                                    <div class="swiper-slide">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/restaurant/CAL07900-bg.jpg"></div>
+                                        </div>
+                                    </div>
+    
+                                    <div class="swiper-slide">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/restaurant/CAL07771-bg.jpg"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="swiper-slide">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/restaurant/DSC03031-bg.jpg"></div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide">
+                                        <div class="ms-item_fs full-height fl-wrap">
+                                            <div class="bg"  data-bg="images/restaurant/DSC03033-bg.jpg"></div>
+                                        </div>
+                                    </div>
+                                    <!--ms_item end-->                                              
+                                </div>
+                            </div>
+                        </div>
+                        <!--ms-container end-->
+                        <div class="overlay"></div>
+                        <!-- <div class="dec-corner dc_lb"></div>
+                        <div class="dec-corner dc_rb"></div>
+                        <div class="dec-corner dc_rt"></div>
+                        <div class="dec-corner dc_lt"></div> -->
+                    </div>
+                    <div class="container">
+                        <div class="hero-title-container htc_single">
+                            <div class="section-title">
+                                <h2 style="color:rgba(255, 255, 255, 0);">asdad</h2>
+                                <!-- <div class="section-separator"><span><i class="fa-thin fa-gem"></i></span></div> -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container small-container ">
+                        <div class="fw-search-wrap_hero">
+                          
+                        </div>
+                    </div>
+                  
+                </div>
+                 
+                <div class="content-dec"><span></span></div>
+            </div>
+      
+            <div class="height-emulator"></div>
+            <footer class="main-footer" style="background-image:url('images/abcd.jpg'); background-size: cover; background-repeat: no-repeat;">
+
+                <div class="footer-inner">
+                    <div class="container">
+                        <!-- footer-widget-wrap -->
+                        <div class="footer-widget-wrap">
+                            <div class="footer-separator-wrap">
+                                <div class="footer-separator"><span></span></div>
+                            </div>
+                            <div class="row">
+                                <!-- footer-widget -->
+                                <div class="col-lg-3">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title" >About us</div>
+                                        <div class="footer-widget-content">
+                                            <p><b>The TeaTree Resort Munnar, the Hilltop Serenity, where spectacular panoramas and tranquil surroundings converge to create an unforgettable retreat. Go where every moment is a scenic delight.</b></p>
+                                            <a href="about.html" class="footer-widget-content-link"><span>Read more</span></a>                                                    	
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                                <!-- footer-widget -->
+                                <div class="col-lg-3">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title">Contact info  </div>
+                                        <div class="footer-widget-content">
+                                            <div class="footer-contacts footer-box">
+                                                <ul>
+                                                    <li><span>Call :</span><a href="tel:+918281877917">+91 8281877917,</a><a href="tel:+918113825917">+91 8113825917</a></li>
+                                                    <li><span>Write  :</span><a href="mailto:teatreemunnar@gmail.com">teatreemunnar@gmail.com</a></li>
+                                                    <li><span>Find us : </span><a href="#">Pappathichola, Suryanelly P.O, Chinnakanal, Munnar</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                                <!-- footer-widget -->
+                                <div class="col-lg-2">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title">Helpful links</div>
+                                        <div class="footer-widget-content">
+                                            <div class="footer-list footer-box  ">
+                                                <ul>
+                                                    <li><a href="rooms.html" >Accomodation</a></li>
+                                                    <li><a href="places_to_visit.html" >Places To Visit</a></li>
+                                                    <li><a href="gallery.html" >Gallery</a></li>
+                                                    <li><a href="contact.html" >Contact</a></li>
+                                                    <li><a href="#" >Privacy Policy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->								
+                                <!-- footer-widget -->
+                                <div class="col-lg-4">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title"></div>
+                                        <div class="footer-widget-content">
+                                            <div class="subcribe-form">
+                                                <p></p>
+                                                <form id="subscribe">
+                                                  
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                            </div>
+                        </div>
+                        <!-- footer-widget-wrap end-->					
+                    </div>
+                    <div class="footer-title-dec">Tea Tree</div>
+                </div>
+                <div class="footer-social">
+                    <div class="container">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <!-- <a href="index.html" class="footer-logo"><img src="images/logo.png" alt=""></a> -->
+                        <div class="copyright">&#169; Tea Tree Resort 2024 . All rights reserved. </div>
+                        <!-- <div class="to-top"><span>Back To Top </span><i class="fal fa-angle-double-up"></i></div> -->
+                    </div>
+                </div>
+            </footer>
+            <!--footer end-->
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->   
+        <script  src="js/jquery.min.js"></script>
+        <script  src="js/plugins.js"></script>
+        <script  src="js/scripts.js"></script>
+    </body>
+
+</html>

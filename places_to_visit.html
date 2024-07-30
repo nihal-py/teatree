@@ -1,0 +1,834 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    
+<head>
+        <!--=============== basic  ===============-->
+        <meta charset="UTF-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Tea Tree Resort</title>
+        <!--=============== css  ===============-->	
+        <link type="text/css" rel="stylesheet" href="css/plugins.css">
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+        <!--=============== favicons ===============-->
+        <link rel="shortcut icon" href="images/favicon.ico">
+        <style>
+
+
+            @media (max-width: 768px) {
+                .main-footer {
+                    height: 150px; /* Adjust the height for smaller screens */
+                    padding: 10px; /* Adjust padding for smaller screens */
+                }
+            }
+    
+            @media (max-width: 480px) {
+                .main-footer {
+                
+                    height: 1000px; /* Adjust the height for even smaller screens */
+                    padding: 0px; /* Adjust padding for smaller screens */
+                }
+            }
+    
+            .call-button {
+                position: fixed;
+                bottom: 90px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: rgb(92, 92, 255);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+            }
+    
+            .call-button img {
+                width: 30px;
+                height: 40px;
+                padding-top:10px;
+            }
+    
+            .call-button a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+            }
+    
+    
+    
+            .whatsapp-button {
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                background-color: #25d366;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                z-index: 1000;
+            }
+    
+            .whatsapp-button img {
+                width: 40px;
+                height: 40px;
+                padding-top:10px;
+            }
+    
+            .whatsapp-button a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                color: white;
+                text-decoration: none;
+            }
+    
+
+
+            /* The Modal (background) */
+            .modal {
+                display: none; /* Hidden by default */
+                position: fixed; /* Stay in place */
+                z-index: 1000; /* Sit on top */
+                left: 0;
+                top: 0;
+                width: 100%; /* Full width */
+                height: 100%; /* Full height */
+                overflow: auto; /* Enable scroll if needed */
+                background-color: rgb(0, 0, 0); /* Fallback color */
+                background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+                padding-top: 60px;
+            }
+
+            /* Modal Content */
+            .modal-content {
+                background-color: #fefefe;
+                margin: 5% auto; /* 15% from the top and centered */
+                padding: 20px;
+                border: 1px solid #888;
+                width: 80%; /* Could be more or less, depending on screen size */
+                max-width: 600px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            /* The Close Button */
+            .close {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+
+            .close2 {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close2:hover,
+            .close2:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+
+
+            .close3 {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close3:hover,
+            .close3:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .close4 {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close4:hover,
+            .close4:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+
+            .close5 {
+                color: #aaa;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close5:hover,
+            .close5:focus {
+                color: black;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .grid-item-details
+            {
+                height:300px;
+            }
+
+
+            /* Responsive */
+            @media screen and (max-width: 768px) {
+                .modal-content {
+                    width: 90%;
+                }
+            }
+
+            @media screen and (max-width: 480px) {
+                .modal-content {
+                    width: 95%;
+                }
+            }
+
+    
+    
+        </style>
+    </head>
+    <body>
+        <div class="whatsapp-button">
+            <a href="https://wa.me/8129033535" target="_blank">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+            </a>
+        </div>
+
+        <div class="call-button">
+            <a href="tel:+918281877917" target="_blank">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/phone.png" alt="Call">
+            </a>
+        </div>
+        <!-- lodaer  -->
+        <div class="loader-wrap">
+            <div class="loader-item">
+                <div class="cd-loader-layer" data-frame="25">
+                    <div class="loader-layer"></div>
+                </div>
+                <span class="loader"><i class="fa-thin fa-gem"></i></span>
+            </div>
+        </div>
+        <!-- loader end  -->
+        <!--  main   -->
+        <div id="main">
+            <!--  header  -->
+            <header class="main-header">
+                <div class="container">
+                    <!--  header-top -->
+                    <div class="header-top  fl-wrap">
+                        <div class="header-top_contacts"><a href="#"><span>Call:</span> +91 8281877917, +91 8113825917</a><a href="#"><span>Find us:</span> Pappathichola, Suryanelly P.O, Chinnakanal, Munnar</a></div>
+                        <div class="header-social">
+                            <ul>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="booking-reviews">
+                            <div class="br-counter">
+                                <span></span>
+                            </div>
+                            <a href="#" target="_blank" class="br_link">
+                                <p></p>
+                            </a>
+                        </div>
+                        <div class="lang-wrap"><a href="#" class="act-lang"></a><span></span><a href="#"></a></div>
+                    </div>
+                    <!--  header-top end  -->
+                    <div class="nav-holder-wrap init-fix-header  fl-wrap">
+                        <a href="index.html" class="logo-holder"><img src="images/logo-org.png" alt=""></a>
+                        <!--  navigation -->
+                        <div class="nav-holder main-menu">
+                            <nav>
+                                <ul>
+                            
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="about.html">About</a></li>
+                                    <li><a href="rooms.html" >Accomodation</a></li>
+                                    <li><a href="places_to_visit.html" class="act-link">Places To Visit</a></li>
+                                    <li><a href="gallery.html">Gallery</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                        <!-- navigation  end -->  		
+                        <div class="serach-header-btn_wrap">							
+                            <a href="rooms.html" class="serach-header-btn"> <span>Book a Room</span></a>
+                        </div>
+
+                        <!-- nav-button-wrap-->
+                        <div class="nav-button-wrap">
+                            <div class="nav-button">
+                                <span></span><span></span><span></span>
+                            </div>
+                        </div>
+                        <!-- nav-button-wrap end-->					
+                        <!-- share-wrapper -->
+                        <div class="share-wrapper isShare">
+                            <div class="share-container fl-wrap"></div>
+                        </div>
+                        <!-- share-wrapper-end -->					
+                        <!--wish-list-wrap-->
+                        <div class="wish-list-wrap novis_cart">
+                            <div class="wish-list-close close_cart-init clwl_btn"><i class="fa-regular fa-xmark"></i></div>
+                            <div class="wish-list-title">Your Wishlist </div>
+                            <div class="wish-list-container">
+                                <!--wish-list-item-->
+                                <div class="wish-list-item fl-wrap">
+                                    <div class="wish-list-img"><a href="room-single.html"><img src="images/room/thumbnail/1.jpg" alt=""></a>  
+                                    </div>
+                                    <div class="wish-list-descr">
+                                        <h4><a href="room-single.html">Garden Family Room</a></h4>
+                                        <div class="wish-list-price">₹129/Night</div>
+                                        <a  href="room-single.html" class="wshil_link">Book Now</a>
+                                        <div class="clear-wishlist"><i class="fa-regular fa-trash-can"></i></div>
+                                    </div>
+                                </div>
+                                <!--wish-list-item end-->
+                                <!--wish-list-item-->
+                                <div class="wish-list-item fl-wrap">
+                                    <div class="wish-list-img"><a href="room-single.html"><img src="images/room/thumbnail/2.jpg" alt=""></a>  
+                                    </div>
+                                    <div class="wish-list-descr">
+                                        <h4><a href="room-single.html">Premium Panorama Room</a></h4>
+                                        <div class="wish-list-price"> ₹230/Night</div>
+                                        <a  href="room-single.html" class="wshil_link">Book Now</a>
+                                        <div class="clear-wishlist"><i class="fa-regular fa-trash-can"></i></div>
+                                    </div>
+                                </div>
+                                <!--wish-list-item end-->
+                            </div>
+                            <div class="wish-list-wrap-btns">
+                                <a href="#" class="wl_btn">Clear wishlist</a>
+                            </div>
+                        </div>
+                        <!--wish-list-wrap-->
+                    </div>
+                </div>
+            </header>
+            <div class="header-overlay close_cart-init"></div>
+            <!--  header end  -->
+            <!--  section  -->
+            <div class="content-section parallax-section hero-section hidden-section" data-scrollax-parent="true">
+                <div class="bg par-elem " data-bg="images/abcd.jpg" data-scrollax="properties: { translateY: '30%' }"></div>
+                <div class="overlay"></div>
+                <div class="container">
+                    <div class="section-title">
+                        <h4></h4>
+                        <h2>Places To Visit Nearby</h2>
+                        <div class="section-separator"><span><i class="fa-thin fa-gem"></i></span></div>
+                    </div>
+                </div>
+                <div class="hero-section-scroll">
+                    <div class="mousey">
+                        <div class="scroller"></div>
+                    </div>
+                </div>
+                <div class="dec-corner dc_lb"></div>
+                <div class="dec-corner dc_rb"></div>
+                <div class="dec-corner dc_rt"></div>
+                <div class="dec-corner dc_lt"></div>
+            </div>
+            <!-- section end  -->
+            <!--content-->
+            <div class="content">
+                <!-- breadcrumbs-wrap  -->
+                <div class="breadcrumbs-wrap" style="margin-top:-80px;">
+                    <div class="container">
+                    </div>
+                </div>
+             
+                <div class="content-section">
+                    <div class="content-dec2 fs-wrapper"></div>
+                 
+                    <div class="container">
+                        <div class="dec-container">
+                            <div class="dc_dec-item_left"><span></span></div>
+                            <div class="dc_dec-item_right"><span></span></div>
+                            <div class="text-block">
+                                <div class="gallery-items grid-big-pad  lightgallery  ">
+                                    <div class="gallery-item desserts">
+                                        <div class="grid-item-holder hov_zoom">
+                                            <img  src="images/places/Gap-Road.jpg"    alt="">
+                                            <a href="images/places/Gap-Road.jpg" class="box-media-zoom   single-popup-image"><i class="fa-light fa-eye"></i></a>
+                                        </div>
+                                        <div class="grid-item-details">
+                                            <h3><a href="#">Gap Road Viewpoint</a>  </h3>
+                                            <p>The road to Gap Road Viewpoint is an adventure in itself. A serpentine ribbon cutting
+                                                through the heart of the Western Ghats, it winds its way upward, offering glimpses of the
+                                                breathtaking panorama below.</p>
+                                          
+                                                <button id="openModalBtn3" class="gid_link">View Details<i class="fa-light fa-arrow-right-long"></i></button>
+                                            </div>
+                                    </div>
+                             
+                                    <div class="gallery-item seafood">
+                                        <div class="grid-item-holder hov_zoom">
+                                            <img  src="images/places/MUNNAR-ANAIRANGAL-VIEW.JPG"    alt="">
+                                            <a href="images/places/MUNNAR-ANAIRANGAL-VIEW.JPG" class="box-media-zoom   single-popup-image"><i class="fa-light fa-eye"></i></a>
+                                        </div>
+                                        <div class="grid-item-details">
+                                            <h3><a href="#">Anayirangal Dam</a></h3>
+                                            <p>Anayirangal Dam, an emerald jewel nestled amidst a verdant tapestry. A serene haven
+                                                where nature&#39;s palette unfolds in hues of green, it beckons weary souls to its tranquil
+                                                embrace
+                                            </p>
+                                            
+                                            <button id="openModalBtn2" class="gid_link">View Details<i class="fa-light fa-arrow-right-long"></i></button>
+                                        </div>
+                                    </div>
+                                 
+                                    <div class="gallery-item desserts">
+                                        <div class="grid-item-holder hov_zoom">
+                                            <img  src="images/places/k.JPG"    alt="">
+                                            <a href="images/places/k.JPG" class="box-media-zoom   single-popup-image"><i class="fa-light fa-eye"></i></a>
+                                        </div>
+                                        <div class="grid-item-details">
+                                            <h3><a href="#">Kolukkumalai</a>  </h3>
+                                            <p>Kolukkumalai, an opulent crown atop the Western Ghats, is a realm where nature paints its
+                                                most exquisite masterpiece. A celestial garden, it stretches towards the heavens, its
+                                                emerald carpet kissed by the sun&#39;s golden rays.</p>
+                                            <button id="openModalBtn" class="gid_link">View Details<i class="fa-light fa-arrow-right-long"></i></button>
+                                        </div>
+                                    </div>
+
+                                    <div class="gallery-item seafood">
+                                        <div class="grid-item-holder hov_zoom">
+                                            <img  src="images/places/Bodimettu-Road.JPG"    alt="">
+                                            <a href="images/places/Bodimettu-Road.JPG" class="box-media-zoom   single-popup-image"><i class="fa-light fa-eye"></i></a>
+                                        </div>
+                                        <div class="grid-item-details">
+                                            <h3><a href="#">Bodimet</a></h3>
+                                            <p>Escape the cacophony of modern life and immerse yourself in the idyllic haven of Bodimet.
+                                                Nestled amidst Munnar&#39;s emerald embrace, this quaint village is a living canvas of rural
+                                                simplicity.</p>
+                                            
+                                            <button id="openModalBtn4" class="gid_link">View Details<i class="fa-light fa-arrow-right-long"></i></button>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="gallery-item seafood">
+                                        <div class="grid-item-holder hov_zoom">
+                                            <img  src="images/places/Meesapulimala.jpg"    alt="">
+                                            <a href="images/places/Meesapulimala.jpg" class="box-media-zoom   single-popup-image"><i class="fa-light fa-eye"></i></a>
+                                        </div>
+                                        <div class="grid-item-details">
+                                            <h3><a href="#">Meesapulimalai</a></h3>
+                                            <p>A verdant masterpiece sculpted by time, Meesapulimalai rises as a crown jewel of the
+                                                Western Ghats. Its emerald slopes cascade towards the heavens, a breathtaking tapestry
+                                                woven with nature&#39;s finest threads.</p>
+                                            
+                                            <button id="openModalBtn5" class="gid_link">View Details<i class="fa-light fa-arrow-right-long"></i></button>
+                                        </div>
+                                    </div>
+                               
+                                </div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+                <!-- section end  -->
+                <div class="content-dec"><span></span></div>
+            </div>
+            <!--content end-->
+
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <h1 style="font-size: 22px;">Kolukkumalai</h1>
+                  <br>
+                  <p>Kolukkumalai, an opulent crown atop the Western Ghats, is a realm where nature paints its
+                    most exquisite masterpiece. A celestial garden, it stretches towards the heavens, its
+                    emerald carpet kissed by the sun&#39;s golden rays.</p>
+                    <p>A verdant tapestry unfolds at Kolukkumalai, a mere sojourn from our haven. This
+                        exalted tea plantation, crowned as the world’s highest, invites you to immerse yourself in a
+                        panorama of unparalleled beauty. As the mist-kissed mountains and verdant valleys unfurl
+                        before you, embark on a journey through time as you explore the tea factory, a living
+                        testament to centuries-old craftsmanship. This is an idyllic retreat for nature&#39;s enthusiasts
+                        and connoisseurs of the leaf alike. The wind, a sage whispering through emerald leaves,
+                        carries Kolukkumalai&#39;s ancient wisdom to a sanctuary where where time stands still,
+                        allowing the soul to rejuvenate.</p>
+                    <p>The path winds its way up the Western Ghats, offering a series of hairpin bends that
+                        test the nerves of even the most seasoned drivers. The road is often carved into the
+                        mountainside, offering sheer drops on one side and towering cliffs on the other. If you&#39;re
+                        lucky enough to experience a misty morning, the drive becomes even more ethereal. The
+                        mountains appear shrouded in a veil of white, creating a mystical atmosphere.</p>
+                    
+                </div>
+            </div>
+
+
+            <div id="myModal2" class="modal">
+                <div class="modal-content">
+                  <span class="close2">&times;</span>
+                  <h1 style="font-size: 22px;">Anayirangal Dam</h1>
+                  <br>
+                  <p>Anayirangal Dam, an emerald jewel nestled amidst a verdant tapestry. A serene haven
+                    where nature&#39;s palette unfolds in hues of green, it beckons weary souls to its tranquil
+                    embrace. As the gentle waters kiss the dam&#39;s foundation, a symphony of tranquility fills the
+                    air. Wander through emerald corridors, where towering trees stand as silent sentinels, and
+                    the soft rustle of leaves is nature&#39;s lullaby. Share laughter and love on its emerald banks, as
+                    the sun paints the sky with hues of gold and crimson. Let the soul find solace in this verdant
+                    sanctuary, rejuvenated by nature&#39;s embrace.</p>
+                    <p>Anayirangal Dam is more than just a body of water; it&#39;s a masterpiece etched by
+                        nature. The dam mirrors the sky&#39;s azure expanse with serene perfection. It crowns the earth
+                        like a diadem of liquid silver, its tranquil waters shimmering under the sun&#39;s gentle caress. A
+                        whispered secret of the forest, this hidden sanctuary invites you to slow down time and let
+                        your dreams dance upon its reflective surface.</p>
+                
+                </div>
+            </div>
+
+
+
+            <div id="myModal3" class="modal">
+                <div class="modal-content">
+                  <span class="close3">&times;</span>
+                  <h1 style="font-size: 22px;">Gap Road Viewpoint</h1>
+                  <br>
+                  <p>The road to Gap Road Viewpoint is an adventure in itself. A serpentine ribbon cutting
+                    through the heart of the Western Ghats, it winds its way upward, offering glimpses of the
+                    breathtaking panorama below. The road, often hugging the mountainside, is a testament to
+                    human ingenuity and nature’s grandeur.</p>
+                    <p>Perched at the precipice of enchantment, Gap Road Viewpoint unveils a panorama
+                        that is nothing short of celestial. A verdant tapestry of rolling hills unfurls below, stitched
+                        together with silver threads of cascading waterfalls. As if painted by an ethereal artist, the
+                        landscape is a masterpiece of nature&#39;s own creation.</p>
+                    <p>Watch as the sky transforms into a living canvas, where clouds dance and play, their
+                        ethereal forms shifting and changing with every passing moment. Capture the essence of
+                        this breathtaking spectacle, a moment frozen in time, a treasure trove for the soul and the
+                        camera alike. This is not merely a viewpoint; it&#39;s a portal to a world of wonder, where
+                        dreamscape and reality intertwine.</p>
+                    <p>Witness mesmerizing clouds drift by and capture unforgettable photos at this
+                        stunning spot, Perfect for nature lovers and photographers.</p>
+                
+                </div>
+            </div>
+
+
+            <div id="myModal4" class="modal">
+                <div class="modal-content">
+                  <span class="close4">&times;</span>
+                  <h1 style="font-size: 22px;">Bodimet</h1>
+                  <br>
+                  <p>Escape the cacophony of modern life and immerse yourself in the idyllic haven of Bodimet.
+                    Nestled amidst Munnar&#39;s emerald embrace, this quaint village is a living canvas of rural
+                    simplicity. Here, time unfurls at a leisurely pace, allowing you to connect with the earth’s
+                    rhythm and the warmth of its inhabitants.</p>
+                    <p>Traditional mud houses, adorned with intricate carvings, stand as silent sentinels of the
+                        past, whispering tales of generations gone by. Explore the local markets, where vibrant
+                        colors and enticing aromas create a sensory delight.</p>
+                    <p>Wander through verdant paddy fields that mirror the sky&#39;s azure hue, and breathe in
+                        the fragrance of nature&#39;s alchemy. Engage in heartfelt conversations with the villagers,
+                        whose smiles are as genuine as the mountain air. Discover a world untouched by haste,
+                        where life&#39;s true essence resides. Bodimet is an invitation to slow down, to savour the
+                        moment, and to experience Kerala&#39;s soul in its purest form.</p>
+                 
+                </div>
+            </div>
+
+
+            <div id="myModal5" class="modal">
+                <div class="modal-content">
+                  <span class="close5">&times;</span>
+                  <h1 style="font-size: 22px;">Meesapulimalai</h1>
+                  <br>
+                  <p>A verdant masterpiece sculpted by time, Meesapulimalai rises as a crown jewel of the
+                    Western Ghats. Its emerald slopes cascade towards the heavens, a breathtaking tapestry
+                    woven with nature&#39;s finest threads. This is shrouded in mist, the mountain&#39;s peaks stand as
+                    ethereal sentinels, guarding the heart of this pristine wilderness.</p>
+                    <p>The air is imbued with the sweet nectar of eucalyptus, a symphony of fragrance that
+                        dances on the wind. A symphony of life unfolds in this verdant sanctuary, where birdsong is
+                        nature&#39;s choir and the rustling of leaves, its rhythmic applause. Meesapulimalai, a haven for
+                        the soul, invites you to lose yourself in the embrace of its pristine beauty.</p>
+               
+                </div>
+            </div>
+
+
+
+
+
+
+            <script>
+                // Get the modal
+                var modal = document.getElementById("myModal");
+            
+                // Get the button that opens the modal
+                var btn = document.getElementById("openModalBtn");
+            
+                // Get the <span> element that closes the modal
+                var span = document.getElementsByClassName("close")[0];
+            
+                // When the user clicks the button, open the modal
+                btn.onclick = function () {
+                    modal.style.display = "block";
+                }
+            
+                // When the user clicks on <span> (x), close the modal
+                span.onclick = function () {
+                    modal.style.display = "none";
+                }
+            
+                // When the user clicks anywhere outside of the modal, close it
+                window.onclick = function (event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    }
+                }
+
+
+             // Get the modal
+             var modal2= document.getElementById("myModal2");
+            
+            // Get the button that opens the modal
+            var btn2 = document.getElementById("openModalBtn2");
+        
+            // Get the <span> element that closes the modal
+            var span2 = document.getElementsByClassName("close2")[0];
+        
+            // When the user clicks the button, open the modal
+            btn2.onclick = function () {
+                modal2.style.display = "block";
+            }
+        
+            // When the user clicks on <span> (x), close the modal
+            span2.onclick = function () {
+                modal2.style.display = "none";
+            }
+        
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal2) {
+                    modal2.style.display = "none";
+                }
+            }
+
+
+            var modal3= document.getElementById("myModal3");
+            
+            // Get the button that opens the modal
+            var btn3 = document.getElementById("openModalBtn3");
+        
+            // Get the <span> element that closes the modal
+            var span3 = document.getElementsByClassName("close3")[0];
+        
+            // When the user clicks the button, open the modal
+            btn3.onclick = function () {
+                modal3.style.display = "block";
+            }
+        
+            // When the user clicks on <span> (x), close the modal
+            span3.onclick = function () {
+                modal3.style.display = "none";
+            }
+        
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal3) {
+                    modal3.style.display = "none";
+                }
+            }
+
+
+
+            var modal4= document.getElementById("myModal4");
+            
+            // Get the button that opens the modal
+            var btn4 = document.getElementById("openModalBtn4");
+        
+            // Get the <span> element that closes the modal
+            var span4 = document.getElementsByClassName("close4")[0];
+        
+            // When the user clicks the button, open the modal
+            btn4.onclick = function () {
+                modal4.style.display = "block";
+            }
+        
+            // When the user clicks on <span> (x), close the modal
+            span4.onclick = function () {
+                modal4.style.display = "none";
+            }
+        
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal4) {
+                    modal4.style.display = "none";
+                }
+            }
+
+
+
+            var modal5= document.getElementById("myModal5");
+            
+            // Get the button that opens the modal
+            var btn5 = document.getElementById("openModalBtn5");
+        
+            // Get the <span> element that closes the modal
+            var span5 = document.getElementsByClassName("close5")[0];
+        
+            // When the user clicks the button, open the modal
+            btn5.onclick = function () {
+                modal5.style.display = "block";
+            }
+        
+            // When the user clicks on <span> (x), close the modal
+            span5.onclick = function () {
+                modal5.style.display = "none";
+            }
+        
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target == modal5) {
+                    modal5.style.display = "none";
+                }
+            }
+
+
+
+            </script>
+            
+
+
+
+
+
+
+            <!--footer  -->
+            <div class="height-emulator"></div>
+            <footer class="main-footer" style="background-image:url('images/abcd.jpg'); background-size: cover; background-repeat: no-repeat;">
+
+                <div class="footer-inner">
+                    <div class="container">
+                        <!-- footer-widget-wrap -->
+                        <div class="footer-widget-wrap">
+                            <div class="footer-separator-wrap">
+                                <div class="footer-separator"><span></span></div>
+                            </div>
+                            <div class="row">
+                                <!-- footer-widget -->
+                                <div class="col-lg-3">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title" >About us</div>
+                                        <div class="footer-widget-content">
+                                            <p><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eaque ipsa quae ab illo inventore veritatis et quasi architecto. Consectetur adipiscing elit.</b></p>
+                                            <a href="about.html" class="footer-widget-content-link"><span>Read more</span></a>                                                    	
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                                <!-- footer-widget -->
+                                <div class="col-lg-3">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title">Contact info  </div>
+                                        <div class="footer-widget-content">
+                                            <div class="footer-contacts footer-box">
+                                                <ul>
+                                                    <li><span>Call :</span><a href="tel:+918281877917">+91 8281877917,</a><a href="tel:+918113825917">+91 8113825917</a></li>
+                                                    <li><span>Write  :</span><a href="mailto:teatreemunnar@gmail.com">teatreemunnar@gmail.com</a></li>
+                                                    <li><span>Find us : </span><a href="#">Pappathichola, Suryanelly P.O, Chinnakanal, Munnar</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                                <!-- footer-widget -->
+                                <div class="col-lg-2">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title">Helpful links</div>
+                                        <div class="footer-widget-content">
+                                            <div class="footer-list footer-box  ">
+                                                <ul>
+                                                    <li><a href="rooms.html" >Accomodation</a></li>
+                                                    <li><a href="places_to_visit.html" >Places To Visit</a></li>
+                                                    <li><a href="gallery.html" >Gallery</a></li>
+                                                    <li><a href="contact.html" >Contact</a></li>
+                                                    <li><a href="#" >Privacy Policy</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->								
+                                <!-- footer-widget -->
+                                <div class="col-lg-4">
+                                    <div class="footer-widget">
+                                        <div class="footer-widget-title"></div>
+                                        <div class="footer-widget-content">
+                                            <div class="subcribe-form">
+                                                <p></p>
+                                                <form id="subscribe">
+                                                  
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- footer-widget  end-->
+                            </div>
+                        </div>
+                        <!-- footer-widget-wrap end-->					
+                    </div>
+                    <div class="footer-title-dec">Tea Tree</div>
+                </div>
+                <div class="footer-social">
+                    <div class="container">
+                        <ul>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <li><a href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <div class="container">
+                        <div class="copyright">&#169; Tea Tree Resort 2024 . All rights reserved. </div>
+                    </div>
+                </div>
+            </footer>
+            <!--footer end-->
+        </div>
+        <!-- Main end -->
+        <!--=============== scripts  ===============-->   
+        <script  src="js/jquery.min.js"></script>
+        <script  src="js/plugins.js"></script>
+        <script  src="js/scripts.js"></script>
+    </body>
+
+</html>
